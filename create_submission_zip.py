@@ -6,7 +6,7 @@ Naming: RollNoSection1_RollNoSection2_RollNoSection3.zip
 import os
 import zipfile
 
-def create_zip(zip_name="22I-0533-A_22I-3106-A_22I-3107-A.zip"):
+def create_zip(zip_name="22I-0533-B_22I-0074-B_22I-0547-B.zip"):
     items_to_include = [
         "cases.xlsx",
         "validation_report.txt",
@@ -42,3 +42,4 @@ def create_zip(zip_name="22I-0533-A_22I-3106-A_22I-3107-A.zip"):
 
 if __name__ == "__main__":
     create_zip()
+

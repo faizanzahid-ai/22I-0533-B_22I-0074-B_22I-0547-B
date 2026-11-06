@@ -15,25 +15,25 @@ from reportlab.platypus import (
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 import pypdf
 
-def generate_proposal_pdf(output_path="proposal.pdf", group_seed=17, members=None):
+def generate_proposal_pdf(output_path="proposal.pdf", group_seed=39, members=None):
     if members is None:
         members = [
             {
                 "name": "Ch Faizan Zahid",
                 "roll": "22I-0533",
-                "section": "BS-AI (B)",
+                "section": "B",
                 "contribution": "Iteration 1: Generator architecture, knapsack/claims exact solver (crates, claims sheets), graph generator & closures (roads, waves sheets), validator core engine (V1-V5 checks), approach note part 1 & 2. Proposed Iteration 2 Modules: Module A (Relief Inventory), Module B (Route Planning), Module H (Hard Planning Questions: 3-SAT & TSP)."
             },
             {
-                "name": "Rida Zubair",
-                "roll": "22I-3106",
-                "section": "BS-AI (A)",
+                "name": "Mohid Abbas",
+                "roll": "22I-0074",
+                "section": "B",
                 "contribution": "Iteration 1: Incident & rescue window generators (incidents, windows sheets), radio log & report generators (radio_log, radio_reports sheets), validator checks (V6-V7 signature & variety checks), validator test suite (broken test cases), approach note part 3 & 4. Proposed Iteration 2 Modules: Module C (Rescue Scheduling), Module D (Emergency Queue), Module E (Radio Logs)."
             },
             {
                 "name": "Fizan Tariq",
                 "roll": "22I-0547",
-                "section": "BS-AI (B)",
+                "section": "B",
                 "contribution": "Iteration 1: Geometric sites & sensor network generators (sites, tour, sensor_edges, sensor_cover sheets), pipeline & drum generators (pipeline_dims, drum_prices, rations sheets), validator trap checks (V8 checks), validation report compilation, repository & packaging. Proposed Iteration 2 Modules: Module F (Network Planning), Module G (Chains and Cuts), Module I (Nearest Sites and Checksums)."
             }
         ]

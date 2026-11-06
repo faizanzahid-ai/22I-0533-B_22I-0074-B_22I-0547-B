@@ -316,6 +316,12 @@ class LifelineDataGenerator:
                     'serial': ser
                 })
 
+            # Guarantee Study 4 signature: >= 10% rare equipment (category 4)
+            if scenario == 4 and not is_trap:
+                num_rare = max(1, int(0.15 * num_crates))
+                for idx in range(num_rare):
+                    crates[idx]['cat'] = 4
+
         # Ensure Variety Rule 1 for Tier S (at least 5 cases, e.g. cases 0 to 7)
         total_crate_weight = sum(c['weight'] for c in crates)
         if k == 47:
@@ -475,13 +481,12 @@ class LifelineDataGenerator:
             for i in range(550):
                 add_edge(i, i + 1, mins=1, cab=case_rng.randint(1, 100))
 
-            # Rest of nodes 551 to V-1: attach to node 0 and each other
-            for i in range(551, V):
-                parent = case_rng.choice([0, case_rng.randint(551, i - 1) if i > 551 else 0])
+            # Nodes 555 to V-1: attach to node 0 and each other (DO NOT touch 551, 552, 553, 554)
+            for i in range(555, V):
+                parent = case_rng.choice([0, case_rng.randint(555, i - 1) if i > 555 else 0])
                 add_edge(parent, i, mins=case_rng.randint(1, 60), cab=case_rng.randint(1, 100))
 
             # target_0 trap property:
-            # target_0 is node 1 (or make target_0 a specific node, say node 551)
             target_0 = 551
             target_1 = 552
             target_2 = 553
@@ -504,14 +509,18 @@ class LifelineDataGenerator:
             add_edge(0, w, mins=1, cab=10)
             add_edge(w, target_0, mins=1, cab=10)
 
+            # Connect target_1 and target_2
+            add_edge(0, target_1, mins=case_rng.randint(1, 60), cab=case_rng.randint(1, 100))
+            add_edge(0, target_2, mins=case_rng.randint(1, 60), cab=case_rng.randint(1, 100))
+
             # Update target in locations sheet list
             targets = [target_0, target_1, target_2]
 
-            # Add more edges among nodes 551..V-1 to satisfy E in [V-1, 3V]
+            # Add more edges ONLY among nodes 555..V-1 to satisfy E in [V-1, 3V] without shortcuts to targets
             target_E = int(1.15 * V)
             while len(roads) < target_E:
-                u = case_rng.randint(551, V - 1)
-                v = case_rng.randint(551, V - 1)
+                u = case_rng.randint(555, V - 1)
+                v = case_rng.randint(555, V - 1)
                 add_edge(u, v)
 
         elif scenario == 5 and not is_trap:
@@ -559,8 +568,8 @@ class LifelineDataGenerator:
                 v = case_rng.randint(0, V - 1)
                 add_edge(u, v)
 
-            # Variety Rule 2 for tier S
-            if tier == 'S' and k < 8:
+            # Variety Rule 2 for tier S (apply to 7 cases, excluding scenario 2 to preserve exact degree)
+            if tier == 'S' and k in [0, 2, 3, 4, 5, 6, 8]:
                 add_edge(0, target_0, mins=60, cab=50)
                 for r in roads:
                     if (r['u'] == 0 and r['v'] == target_0) or (r['u'] == target_0 and r['v'] == 0):
@@ -577,6 +586,17 @@ class LifelineDataGenerator:
                             r['minutes'] = 1
                         if (r['u'] == w and r['v'] == target_0) or (r['u'] == target_0 and r['v'] == w):
                             r['minutes'] = 1
+
+            if scenario == 2 and not is_trap:
+                # Study 2 signature: avg degree 2E/V in [2.0, 2.6]
+                while len(roads) > V and (2 * len(roads) / V > 2.58):
+                    popped = roads.pop()
+                    if (popped['u'], popped['v']) in road_set:
+                        road_set.remove((popped['u'], popped['v']))
+                while 2 * len(roads) / V < 2.01:
+                    u = case_rng.randint(0, V - 1)
+                    v = case_rng.randint(0, V - 1)
+                    add_edge(u, v)
 
         roads.sort(key=lambda r: (r['u'], r['v']))
         for idx, r in enumerate(roads):

@@ -1,19 +1,19 @@
-Group Number: 17
+Group Number: 39
 
 Member 1:
 Name: Ch Faizan Zahid
 Roll Number: 22I-0533
-Section: BS-AI (B)
+Section: B
 GitHub: https://github.com/faizanzahid-ai
 
 Member 2:
-Name: Rida Zubair
-Roll Number: 22I-3106
-Section: BS-AI (A)
-GitHub: https://github.com/Rida-Zubair
+Name: Mohid Abbas
+Roll Number: 22I-0074
+Section: B
+GitHub: https://github.com/Mohid-Abbas
 
 Member 3:
 Name: Fizan Tariq
 Roll Number: 22I-0547
-Section: BS-AI (B)
-GitHub: https://github.com/FizanTariq
+Section: B
+GitHub: https://github.com/Fizan-Tariq

@@ -162,3 +162,4 @@ def generate_approach_pdf(output_path="approach.pdf"):
 
 if __name__ == "__main__":
     generate_approach_pdf()
+

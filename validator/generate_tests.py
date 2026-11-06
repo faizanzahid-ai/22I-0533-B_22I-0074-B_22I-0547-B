@@ -54,7 +54,7 @@ def save_case_to_workbook(cases_data, output_path):
     wb.save(output_path)
 
 
-def generate_broken_tests(tests_dir="validator/tests", base_seed=17):
+def generate_broken_tests(tests_dir="validator/tests", base_seed=39):
     os.makedirs(tests_dir, exist_ok=True)
 
     # Generate master data for 50 cases

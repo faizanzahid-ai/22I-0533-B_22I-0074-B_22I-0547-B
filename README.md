@@ -7,17 +7,17 @@
 ---
 
 ### Group Members
-- **Ch Faizan Zahid** (22I-0533, Section A) — [GitHub Profile](https://github.com/faizanzahid-ai)
-- **Rida Zubair** (22I-3106, Section A) — [GitHub Profile](https://github.com/Rida-Zubair)
-- **Muhammad Abdullah** (22I-3107, Section A)
+- **Ch Faizan Zahid** (22I-0533, Section B) — [GitHub Profile](https://github.com/faizanzahid-ai)
+- **Mohid Abbas** (22I-0074, Section B) — [GitHub Profile](https://github.com/Mohid-Abbas)
+- **Fizan Tariq** (22I-0547, Section B) — [GitHub Profile](https://github.com/Fizan-Tariq)
 
-**Group Seed**: `17`  
-**GitHub Repository**: [https://github.com/faizanzahid-ai/22I-0533-A_22I-3106-A_22I-3107-A](https://github.com/faizanzahid-ai/22I-0533-A_22I-3106-A_22I-3107-A)
+**Group Number / Seed**: `39`  
+**GitHub Repository**: [https://github.com/faizanzahid-ai/22I-0533-B_22I-0074-B_22I-0547-B](https://github.com/faizanzahid-ai/22I-0533-B_22I-0074-B_22I-0547-B)
 
 ---
 
 ### Deliverables Manifest
-1. `cases.xlsx`: Master Excel workbook containing exactly 50 cases across all 20 required sheets in exact order. Generated programmatically from group seed 17; zero manual editing.
+1. `cases.xlsx`: Master Excel workbook containing exactly 50 cases across all 20 required sheets in exact order. Generated programmatically from group seed 39; zero manual editing.
 2. `generator/`:
    - `generate.py`: Python program generating `cases.xlsx` from the group seed.
    - `README.md`: Reproduction documentation with the exact command to recreate `cases.xlsx`.
@@ -44,8 +44,8 @@
 To reproduce `cases.xlsx` and the full validation suite:
 
 ```bash
-# 1. Generate master cases.xlsx from group seed 17
-python generator/generate.py --seed 17 --output cases.xlsx
+# 1. Generate master cases.xlsx from group seed 39
+python generator/generate.py --seed 39 --output cases.xlsx
 
 # 2. Run comprehensive validation and generate validation_report.txt
 python validator/run_validation.py

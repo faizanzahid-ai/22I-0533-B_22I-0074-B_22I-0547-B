@@ -107,3 +107,4 @@ For each case study, specific data characteristics create acute computational bo
 6. **Outbreak Camp**:
    * *Hardest Decision 1: Relief Inventory (Module A)*. Over $50\%$ of medical and water crates expire by hour 300. Optimizing truck inventory requires multi-objective scheduling that simultaneously maximizes humanitarian utility and minimizes perishable spoilage loss.
    * *Hardest Decision 2: Radio Logs (Module E)*. Over $25\%$ of log symbols are repetitive beacon characters, skewing frequency tables and requiring efficient run-length and Huffman tree compression to avoid memory bloat.
+
