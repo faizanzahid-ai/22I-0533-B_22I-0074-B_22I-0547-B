@@ -1,7 +1,0 @@
-__pycache__/
-*.py[cod]
-*$py.class
-.vscode/
-.idea/
-*.zip
-validation_report_*.txt

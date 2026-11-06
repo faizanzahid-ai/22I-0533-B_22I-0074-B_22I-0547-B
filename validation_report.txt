@@ -1,169 +1,271 @@
-================================================================================
-LIFELINE ALGORITHMIC RELIEF-COMMAND ENGINE
-ITERATION 1: COMPLETE VALIDATION REPORT
-================================================================================
+==============================================================================
+LIFELINE - validation report (group seed 39)
+generated 2026-11-06 22:24 by validator/run_report.py
+==============================================================================
 
-PART 1: MASTER DATASET VALIDATION (cases.xlsx)
---------------------------------------------------------------------------------
-======================================================================
-LIFELINE DATA VALIDATION REPORT
-======================================================================
-File: cases.xlsx
-Total Cases: 50
-----------------------------------------------------------------------
-Case 39-00: PASS
-Case 39-01: PASS
-Case 39-02: PASS
-Case 39-03: PASS
-Case 39-04: PASS
-Case 39-05: PASS
-Case 39-06: PASS
-Case 39-07: PASS
-Case 39-08: PASS
-Case 39-09: PASS
-Case 39-10: PASS
-Case 39-11: PASS
-Case 39-12: PASS
-Case 39-13: PASS
-Case 39-14: PASS
-Case 39-15: PASS
-Case 39-16: PASS
-Case 39-17: PASS
-Case 39-18: PASS
-Case 39-19: PASS
-Case 39-20: PASS
-Case 39-21: PASS
-Case 39-22: PASS
-Case 39-23: PASS
-Case 39-24: PASS
-Case 39-25: PASS
-Case 39-26: PASS
-Case 39-27: PASS
-Case 39-28: PASS
-Case 39-29: PASS
-Case 39-30: PASS
-Case 39-31: PASS
-Case 39-32: PASS
-Case 39-33: PASS
-Case 39-34: PASS
-Case 39-35: PASS
-Case 39-36: PASS
-Case 39-37: PASS
-Case 39-38: PASS
-Case 39-39: PASS
-Case 39-40: PASS
-Case 39-41: PASS
-Case 39-42: PASS
-Case 39-43: PASS
-Case 39-44: PASS
-Case 39-45: PASS
-Case 39-46: PASS
-Case 39-47: PASS
-Case 39-48: PASS
-Case 39-49: PASS
-----------------------------------------------------------------------
-VARIETY RULES SUMMARY (Section 3 Variety Rules):
-  1. Knapsack greedy suboptimal in Tier S: 12 cases (Required: >= 5) -> PASS
-  2. Min-hop route costs more in Tier S:   12 cases (Required: >= 5) -> PASS
-  3. Safety ratio across 26 M/L cases:
-     - Below 3.5: 7 cases (Required: >= 5) -> PASS
-     - 3.5 to 4.8: 11 cases (Required: >= 8) -> PASS
-     - Above 4.8: 8 cases (Required: >= 5) -> PASS
-  4. Unique modules across cases: PASS
-----------------------------------------------------------------------
-FINAL VERDICT: PASS
-======================================================================
+PART 1 - the submitted workbook
+------------------------------------------------------------------------------
+LIFELINE validator - file: cases.xlsx - seed 39 - full workbook
+WORKBOOK PASS (sheets, headers, types, order, 50 cases, variety rules)
+    variety: greedy-suboptimal S cases = 13, fewest-roads-dearer S cases = 17, safety bands = 7/11/8
+39-00 PASS
+39-01 PASS
+39-02 PASS
+39-03 PASS
+39-04 PASS
+39-05 PASS
+39-06 PASS
+39-07 PASS
+39-08 PASS
+39-09 PASS
+39-10 PASS
+39-11 PASS
+39-12 PASS
+39-13 PASS
+39-14 PASS
+39-15 PASS
+39-16 PASS
+39-17 PASS
+39-18 PASS
+39-19 PASS
+39-20 PASS
+39-21 PASS
+39-22 PASS
+39-23 PASS
+39-24 PASS
+39-25 PASS
+39-26 PASS
+39-27 PASS
+39-28 PASS
+39-29 PASS
+39-30 PASS
+39-31 PASS
+39-32 PASS
+39-33 PASS
+39-34 PASS
+39-35 PASS
+39-36 PASS
+39-37 PASS
+39-38 PASS
+39-39 PASS
+39-40 PASS
+39-41 PASS
+39-42 PASS
+39-43 PASS
+39-44 PASS
+39-45 PASS
+39-46 PASS
+39-47 PASS
+39-48 PASS
+39-49 PASS
+SUMMARY: 50/50 cases PASS; workbook PASS
+RESULT: PASS
 
-================================================================================
-PART 2: REJECTION OF BROKEN TEST COPIES (validator/tests/)
-================================================================================
-Requirement: At least two valid cases, each broken in at least 5 different ways.
-The validator must detect and reject every corrupted copy.
+PART 2 - validator tests (validator/tests/, --subset mode)
+------------------------------------------------------------------------------
 
---------------------------------------------------------------------------------
-TEST CASE 1: caseA_broken_V1_missing_sheet.xlsx
---------------------------------------------------------------------------------
-Result: REJECTED (FAIL) - Broken rules successfully detected!
-Detected Global Errors:
-  [X] V1: Sheets mismatch. Expected ['cases', 'crates', 'locations', 'roads', 'waves', 'radio_log', 'radio_patterns', 'radio_reports', 'windows', 'incidents', 'sites', 'tour', 'pipeline_dims', 'drum_prices', 'sensor_edges', 'sensor_cover', 'safety_rules', 'safety_planted', 'rations', 'claims'], got ['cases', 'crates', 'locations', 'roads', 'waves', 'radio_log', 'radio_patterns', 'radio_reports', 'windows', 'incidents', 'sites', 'tour', 'pipeline_dims', 'drum_prices', 'sensor_edges', 'sensor_cover', 'safety_rules', 'safety_planted', 'rations']
+>>> broken_39-00_01_header_renamed.xlsx
+LIFELINE validator - file: broken_39-00_01_header_renamed.xlsx - seed 39 - subset mode
+WORKBOOK FAIL
+    [V1] sheet crates: header must be ['case_id', 'crate_id', 'cat', 'weight', 'value', 'expiry', 'serial'], found ['case_id', 'crate_id', 'cat', 'kg', 'value', 'expiry', 'serial']
+39-00 PASS
+SUMMARY: 1/1 cases PASS; workbook FAIL
+RESULT: FAIL
 
---------------------------------------------------------------------------------
-TEST CASE 2: caseA_broken_V2_crate_weight.xlsx
---------------------------------------------------------------------------------
-Result: REJECTED (FAIL) - Broken rules successfully detected!
-Detected Case Errors for 39-00:
-  [X] V2: Crate 1 weight 99 not in [1, 20]
+>>> broken_39-00_02_weight_out_of_range.xlsx
+LIFELINE validator - file: broken_39-00_02_weight_out_of_range.xlsx - seed 39 - subset mode
+WORKBOOK PASS (sheets, headers, types, order)
+39-00 FAIL
+    [V2] crate 1: weight 25 not in 1..20
+SUMMARY: 0/1 cases PASS; workbook PASS
+RESULT: FAIL
 
---------------------------------------------------------------------------------
-TEST CASE 3: caseA_broken_V3_invalid_target.xlsx
---------------------------------------------------------------------------------
-Result: REJECTED (FAIL) - Broken rules successfully detected!
-Detected Case Errors for 39-00:
-  [X] V3: Target 9999 does not exist in locations
+>>> broken_39-00_03_repeated_road.xlsx
+LIFELINE validator - file: broken_39-00_03_repeated_road.xlsx - seed 39 - subset mode
+WORKBOOK PASS (sheets, headers, types, order)
+39-00 FAIL
+    [V3] road 1: repeated pair (0,1)
+    [V4] network is not connected before closures (1 locations unreachable)
+SUMMARY: 0/1 cases PASS; workbook PASS
+RESULT: FAIL
 
---------------------------------------------------------------------------------
-TEST CASE 4: caseA_broken_V4_disconnected_network.xlsx
---------------------------------------------------------------------------------
-Result: REJECTED (FAIL) - Broken rules successfully detected!
-Detected Case Errors for 39-00:
-  [X] V3: road_no not consecutive from 0
-  [X] V4: Network not connected before closures (5/6 reachable)
-  [X] V7: Study 1 avg deg 1.67 not in [2.2, 3.2]
+>>> broken_39-00_04_disconnected.xlsx
+LIFELINE validator - file: broken_39-00_04_disconnected.xlsx - seed 39 - subset mode
+WORKBOOK PASS (sheets, headers, types, order)
+39-00 FAIL
+    [V4] network is not connected before closures (1 locations unreachable)
+SUMMARY: 0/1 cases PASS; workbook PASS
+RESULT: FAIL
 
---------------------------------------------------------------------------------
-TEST CASE 5: caseA_broken_V5_corrupted_claim.xlsx
---------------------------------------------------------------------------------
-Result: REJECTED (FAIL) - Broken rules successfully detected!
-Detected Case Errors for 39-00:
-  [X] V5: Claim cargo_opt 99999 != true 180
+>>> broken_39-00_05_pattern_count.xlsx
+LIFELINE validator - file: broken_39-00_05_pattern_count.xlsx - seed 39 - subset mode
+WORKBOOK PASS (sheets, headers, types, order)
+39-00 FAIL
+    [V5] pattern 1: count 9 but it occurs 8 times
+SUMMARY: 0/1 cases PASS; workbook PASS
+RESULT: FAIL
 
---------------------------------------------------------------------------------
-TEST CASE 6: caseB_broken_V2_invalid_penalty.xlsx
---------------------------------------------------------------------------------
-Result: REJECTED (FAIL) - Broken rules successfully detected!
-Detected Case Errors for 39-01:
-  [X] V2: Location 1 penalty 5 not in {0, 1, 2, 4, 6}
+>>> broken_39-00_06_wrong_claim.xlsx
+LIFELINE validator - file: broken_39-00_06_wrong_claim.xlsx - seed 39 - subset mode
+WORKBOOK PASS (sheets, headers, types, order)
+39-00 FAIL
+    [V5] cargo_opt 413 but the optimum is 408
+SUMMARY: 0/1 cases PASS; workbook PASS
+RESULT: FAIL
 
---------------------------------------------------------------------------------
-TEST CASE 7: caseB_broken_V3_nonconsecutive_crate_id.xlsx
---------------------------------------------------------------------------------
-Result: REJECTED (FAIL) - Broken rules successfully detected!
-Detected Case Errors for 39-01:
-  [X] V3: crate_id not consecutive from 1
+>>> broken_39-00_07_tour_length.xlsx
+LIFELINE validator - file: broken_39-00_07_tour_length.xlsx - seed 39 - subset mode
+WORKBOOK PASS (sheets, headers, types, order)
+39-00 FAIL
+    [V6] tour_length 2829 but the planted tour is 2826 long
+SUMMARY: 0/1 cases PASS; workbook PASS
+RESULT: FAIL
 
---------------------------------------------------------------------------------
-TEST CASE 8: caseB_broken_V4_overlapping_waves.xlsx
---------------------------------------------------------------------------------
-Result: REJECTED (FAIL) - Broken rules successfully detected!
-Detected Case Errors for 39-01:
-  [X] V4: Road 9 appears in multiple waves (1 and 1)
+>>> broken_39-00_08_signature_food_water.xlsx
+LIFELINE validator - file: broken_39-00_08_signature_food_water.xlsx - seed 39 - subset mode
+WORKBOOK PASS (sheets, headers, types, order)
+39-00 FAIL
+    [V7] Delta Flood: food+water crates < 55%
+SUMMARY: 0/1 cases PASS; workbook PASS
+RESULT: FAIL
 
---------------------------------------------------------------------------------
-TEST CASE 9: caseB_broken_V6_invalid_vertex_cover.xlsx
---------------------------------------------------------------------------------
-Result: REJECTED (FAIL) - Broken rules successfully detected!
-Detected Case Errors for 39-01:
-  [X] V2: Sensor cover k 1 not in [2, 5]
-  [X] V6: Edge (1, 8) not covered by planted cover
-  [X] V6: Edge (2, 8) not covered by planted cover
-  [X] V6: Edge (3, 8) not covered by planted cover
-  [X] V6: Edge (4, 5) not covered by planted cover
-  [X] V6: Edge (4, 6) not covered by planted cover
-  [X] V6: Edge (4, 7) not covered by planted cover
-  [X] V6: Edge (4, 8) not covered by planted cover
-  [X] V6: Edge (4, 9) not covered by planted cover
-  [X] V6: Edge (4, 10) not covered by planted cover
-  [X] V6: Edge (6, 8) not covered by planted cover
-  [X] V6: Edge (7, 8) not covered by planted cover
-  [X] V6: Edge (8, 9) not covered by planted cover
+>>> broken_39-00_09_wrong_tier.xlsx
+LIFELINE validator - file: broken_39-00_09_wrong_tier.xlsx - seed 39 - subset mode
+WORKBOOK PASS (sheets, headers, types, order)
+39-00 FAIL
+    [V1] tier 'M' but case 0 is tier S
+    [V3] claims rows are for tier S only
+SUMMARY: 0/1 cases PASS; workbook PASS
+RESULT: FAIL
 
---------------------------------------------------------------------------------
-TEST CASE 10: caseB_broken_V7_signature_priority.xlsx
---------------------------------------------------------------------------------
-Result: REJECTED (FAIL) - Broken rules successfully detected!
-Detected Case Errors for 39-01:
-  [X] V7: Study 2 mean priority 1.00 < 6.0
+>>> broken_39-01_01_waves_overlap.xlsx
+LIFELINE validator - file: broken_39-01_01_waves_overlap.xlsx - seed 39 - subset mode
+WORKBOOK PASS (sheets, headers, types, order)
+39-01 FAIL
+    [V4] waves are not disjoint: roads [7] closed more than once
+SUMMARY: 0/1 cases PASS; workbook PASS
+RESULT: FAIL
 
-================================================================================
-END OF VALIDATION REPORT
-================================================================================
+>>> broken_39-01_02_edit_bound.xlsx
+LIFELINE validator - file: broken_39-01_02_edit_bound.xlsx - seed 39 - subset mode
+WORKBOOK PASS (sheets, headers, types, order)
+39-01 FAIL
+    [V5] edit_bound 0 must be within true distance 1 .. 34
+SUMMARY: 0/1 cases PASS; workbook PASS
+RESULT: FAIL
+
+>>> broken_39-01_03_rations_sum.xlsx
+LIFELINE validator - file: broken_39-01_03_rations_sum.xlsx - seed 39 - subset mode
+WORKBOOK PASS (sheets, headers, types, order)
+39-01 FAIL
+    [V6] planted rations add up to 5012, rations_target is 4045
+SUMMARY: 0/1 cases PASS; workbook PASS
+RESULT: FAIL
+
+>>> broken_39-01_04_cover_missing_node.xlsx
+LIFELINE validator - file: broken_39-01_04_cover_missing_node.xlsx - seed 39 - subset mode
+WORKBOOK PASS (sheets, headers, types, order)
+39-01 FAIL
+    [V6] sensor_cover must hold sensor_k = 5 distinct nodes, found 4
+    [V6] planted cover misses 3 edges, e.g. [(0, 8), (8, 9), (8, 12)]
+SUMMARY: 0/1 cases PASS; workbook PASS
+RESULT: FAIL
+
+>>> broken_39-01_05_assignment.xlsx
+LIFELINE validator - file: broken_39-01_05_assignment.xlsx - seed 39 - subset mode
+WORKBOOK PASS (sheets, headers, types, order)
+39-01 FAIL
+    [V6] planted assignment breaks 4 rules, e.g. rule [13, 27, 31]
+SUMMARY: 0/1 cases PASS; workbook PASS
+RESULT: FAIL
+
+>>> broken_39-01_06_tick_decreasing.xlsx
+LIFELINE validator - file: broken_39-01_06_tick_decreasing.xlsx - seed 39 - subset mode
+WORKBOOK PASS (sheets, headers, types, order)
+39-01 FAIL
+    [V2] ticks decrease
+SUMMARY: 0/1 cases PASS; workbook PASS
+RESULT: FAIL
+
+>>> broken_39-01_07_degree_too_high.xlsx
+LIFELINE validator - file: broken_39-01_07_degree_too_high.xlsx - seed 39 - subset mode
+WORKBOOK PASS (sheets, headers, types, order)
+39-01 FAIL
+    [V7] Mountain Earthquake: average degree 3.09 not in 2.0..2.6
+SUMMARY: 0/1 cases PASS; workbook PASS
+RESULT: FAIL
+
+>>> broken_39-01_08_missing_sheet.xlsx
+LIFELINE validator - file: broken_39-01_08_missing_sheet.xlsx - seed 39 - subset mode
+WORKBOOK FAIL
+    [V1] sheets must be exactly ['cases', 'crates', 'locations', 'roads', 'waves', 'radio_log', 'radio_patterns', 'radio_reports', 'windows', 'incidents', 'sites', 'tour', 'pipeline_dims', 'drum_prices', 'sensor_edges', 'sensor_cover', 'safety_rules', 'safety_planted', 'rations', 'claims'] in this order, found ['cases', 'crates', 'locations', 'roads', 'waves', 'radio_log', 'radio_patterns', 'radio_reports', 'windows', 'incidents', 'sites', 'tour', 'pipeline_dims', 'sensor_edges', 'sensor_cover', 'safety_rules', 'safety_planted', 'rations', 'claims']
+39-01 FAIL
+    [V2] drum length L = 0 outside 5..14
+    [V5] drum_opt 444 but the optimum is 0
+SUMMARY: 0/1 cases PASS; workbook FAIL
+RESULT: FAIL
+
+>>> broken_39-01_09_bad_symbol.xlsx
+LIFELINE validator - file: broken_39-01_09_bad_symbol.xlsx - seed 39 - subset mode
+WORKBOOK PASS (sheets, headers, types, order)
+39-01 FAIL
+    [V2] radio log uses symbols outside the alphabet: ['a']
+SUMMARY: 0/1 cases PASS; workbook PASS
+RESULT: FAIL
+
+>>> broken_39-47_01_trap_defused.xlsx
+LIFELINE validator - file: broken_39-47_01_trap_defused.xlsx - seed 39 - subset mode
+WORKBOOK PASS (sheets, headers, types, order)
+39-47 FAIL
+    [V8] Best-looking-crate trap: greedy 118 is more than 60% of optimum 118
+SUMMARY: 0/1 cases PASS; workbook PASS
+RESULT: FAIL
+
+>>> valid_39-00.xlsx
+LIFELINE validator - file: valid_39-00.xlsx - seed 39 - subset mode
+WORKBOOK PASS (sheets, headers, types, order)
+39-00 PASS
+SUMMARY: 1/1 cases PASS; workbook PASS
+RESULT: PASS
+
+>>> valid_39-01.xlsx
+LIFELINE validator - file: valid_39-01.xlsx - seed 39 - subset mode
+WORKBOOK PASS (sheets, headers, types, order)
+39-01 PASS
+SUMMARY: 1/1 cases PASS; workbook PASS
+RESULT: PASS
+
+>>> valid_39-47.xlsx
+LIFELINE validator - file: valid_39-47.xlsx - seed 39 - subset mode
+WORKBOOK PASS (sheets, headers, types, order)
+39-47 PASS
+SUMMARY: 1/1 cases PASS; workbook PASS
+RESULT: PASS
+
+PART 3 - summary
+------------------------------------------------------------------------------
+submitted workbook: PASS
+test file                                               expected  got   ok
+broken_39-00_01_header_renamed.xlsx                     FAIL      FAIL  yes
+broken_39-00_02_weight_out_of_range.xlsx                FAIL      FAIL  yes
+broken_39-00_03_repeated_road.xlsx                      FAIL      FAIL  yes
+broken_39-00_04_disconnected.xlsx                       FAIL      FAIL  yes
+broken_39-00_05_pattern_count.xlsx                      FAIL      FAIL  yes
+broken_39-00_06_wrong_claim.xlsx                        FAIL      FAIL  yes
+broken_39-00_07_tour_length.xlsx                        FAIL      FAIL  yes
+broken_39-00_08_signature_food_water.xlsx               FAIL      FAIL  yes
+broken_39-00_09_wrong_tier.xlsx                         FAIL      FAIL  yes
+broken_39-01_01_waves_overlap.xlsx                      FAIL      FAIL  yes
+broken_39-01_02_edit_bound.xlsx                         FAIL      FAIL  yes
+broken_39-01_03_rations_sum.xlsx                        FAIL      FAIL  yes
+broken_39-01_04_cover_missing_node.xlsx                 FAIL      FAIL  yes
+broken_39-01_05_assignment.xlsx                         FAIL      FAIL  yes
+broken_39-01_06_tick_decreasing.xlsx                    FAIL      FAIL  yes
+broken_39-01_07_degree_too_high.xlsx                    FAIL      FAIL  yes
+broken_39-01_08_missing_sheet.xlsx                      FAIL      FAIL  yes
+broken_39-01_09_bad_symbol.xlsx                         FAIL      FAIL  yes
+broken_39-47_01_trap_defused.xlsx                       FAIL      FAIL  yes
+valid_39-00.xlsx                                        PASS      PASS  yes
+valid_39-01.xlsx                                        PASS      PASS  yes
+valid_39-47.xlsx                                        PASS      PASS  yes
+broken copies rejected: 19/19; valid copies accepted: 3/3
