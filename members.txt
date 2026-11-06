@@ -1,0 +1,19 @@
+Group Number: 17
+
+Member 1:
+Name: Ch Faizan Zahid
+Roll Number: 22I-0533
+Section: A
+GitHub: https://github.com/faizanzahid-ai
+
+Member 2:
+Name: Rida Zubair
+Roll Number: 22I-3106
+Section: A
+GitHub: https://github.com/Rida-Zubair
+
+Member 3:
+Name: Muhammad Abdullah
+Roll Number: 22I-3107
+Section: A
+GitHub: https://github.com/Muhammad-Abdullah
