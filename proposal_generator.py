@@ -25,9 +25,9 @@ def generate_proposal_pdf(output_path="proposal.pdf", group_seed=17, members=Non
                 "contribution": "Iteration 1: Generator architecture, knapsack/claims exact solver (crates, claims sheets), graph generator & closures (roads, waves sheets), validator core engine (V1-V5 checks), approach note part 1 & 2. Proposed Iteration 2 Modules: Module A (Relief Inventory), Module B (Route Planning), Module H (Hard Planning Questions: 3-SAT & TSP)."
             },
             {
-                "name": "MOhid Abbas",
-                "roll": "24I-0074",
-                "section": "BS-AI (B)",
+                "name": "Rida Zubair",
+                "roll": "22I-3106",
+                "section": "BS-AI (A)",
                 "contribution": "Iteration 1: Incident & rescue window generators (incidents, windows sheets), radio log & report generators (radio_log, radio_reports sheets), validator checks (V6-V7 signature & variety checks), validator test suite (broken test cases), approach note part 3 & 4. Proposed Iteration 2 Modules: Module C (Rescue Scheduling), Module D (Emergency Queue), Module E (Radio Logs)."
             },
             {
