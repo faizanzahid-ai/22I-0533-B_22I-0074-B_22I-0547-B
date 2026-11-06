@@ -1,0 +1,173 @@
+================================================================================
+LIFELINE ALGORITHMIC RELIEF-COMMAND ENGINE
+ITERATION 1: COMPLETE VALIDATION REPORT
+================================================================================
+
+PART 1: MASTER DATASET VALIDATION (cases.xlsx)
+--------------------------------------------------------------------------------
+======================================================================
+LIFELINE DATA VALIDATION REPORT
+======================================================================
+File: cases.xlsx
+Total Cases: 50
+----------------------------------------------------------------------
+Case 17-00: PASS
+Case 17-01: PASS
+Case 17-02: PASS
+Case 17-03: PASS
+Case 17-04: PASS
+Case 17-05: PASS
+Case 17-06: PASS
+Case 17-07: PASS
+Case 17-08: PASS
+Case 17-09: PASS
+Case 17-10: PASS
+Case 17-11: PASS
+Case 17-12: PASS
+Case 17-13: PASS
+Case 17-14: PASS
+Case 17-15: PASS
+Case 17-16: PASS
+Case 17-17: PASS
+Case 17-18: PASS
+Case 17-19: PASS
+Case 17-20: PASS
+Case 17-21: PASS
+Case 17-22: PASS
+Case 17-23: PASS
+Case 17-24: PASS
+Case 17-25: PASS
+Case 17-26: PASS
+Case 17-27: PASS
+Case 17-28: PASS
+Case 17-29: PASS
+Case 17-30: PASS
+Case 17-31: PASS
+Case 17-32: PASS
+Case 17-33: PASS
+Case 17-34: PASS
+Case 17-35: PASS
+Case 17-36: PASS
+Case 17-37: PASS
+Case 17-38: PASS
+Case 17-39: PASS
+Case 17-40: PASS
+Case 17-41: PASS
+Case 17-42: PASS
+Case 17-43: PASS
+Case 17-44: PASS
+Case 17-45: PASS
+Case 17-46: PASS
+Case 17-47: PASS
+Case 17-48: PASS
+Case 17-49: PASS
+----------------------------------------------------------------------
+VARIETY RULES SUMMARY (Section 3 Variety Rules):
+  1. Knapsack greedy suboptimal in Tier S: 13 cases (Required: >= 5) -> PASS
+  2. Min-hop route costs more in Tier S:   10 cases (Required: >= 5) -> PASS
+  3. Safety ratio across 26 M/L cases:
+     - Below 3.5: 7 cases (Required: >= 5) -> PASS
+     - 3.5 to 4.8: 11 cases (Required: >= 8) -> PASS
+     - Above 4.8: 8 cases (Required: >= 5) -> PASS
+  4. Unique modules across cases: PASS
+----------------------------------------------------------------------
+FINAL VERDICT: PASS
+======================================================================
+
+================================================================================
+PART 2: REJECTION OF BROKEN TEST COPIES (validator/tests/)
+================================================================================
+Requirement: At least two valid cases, each broken in at least 5 different ways.
+The validator must detect and reject every corrupted copy.
+
+--------------------------------------------------------------------------------
+TEST CASE 1: caseA_broken_V1_missing_sheet.xlsx
+--------------------------------------------------------------------------------
+Result: REJECTED (FAIL) - Broken rules successfully detected!
+Detected Global Errors:
+  [X] V1: Sheets mismatch. Expected ['cases', 'crates', 'locations', 'roads', 'waves', 'radio_log', 'radio_patterns', 'radio_reports', 'windows', 'incidents', 'sites', 'tour', 'pipeline_dims', 'drum_prices', 'sensor_edges', 'sensor_cover', 'safety_rules', 'safety_planted', 'rations', 'claims'], got ['cases', 'crates', 'locations', 'roads', 'waves', 'radio_log', 'radio_patterns', 'radio_reports', 'windows', 'incidents', 'sites', 'tour', 'pipeline_dims', 'drum_prices', 'sensor_edges', 'sensor_cover', 'safety_rules', 'safety_planted', 'rations']
+
+--------------------------------------------------------------------------------
+TEST CASE 2: caseA_broken_V2_crate_weight.xlsx
+--------------------------------------------------------------------------------
+Result: REJECTED (FAIL) - Broken rules successfully detected!
+Detected Case Errors for 17-00:
+  [X] V2: Crate 1 weight 99 not in [1, 20]
+
+--------------------------------------------------------------------------------
+TEST CASE 3: caseA_broken_V3_invalid_target.xlsx
+--------------------------------------------------------------------------------
+Result: REJECTED (FAIL) - Broken rules successfully detected!
+Detected Case Errors for 17-00:
+  [X] V3: Target 9999 does not exist in locations
+
+--------------------------------------------------------------------------------
+TEST CASE 4: caseA_broken_V4_disconnected_network.xlsx
+--------------------------------------------------------------------------------
+Result: REJECTED (FAIL) - Broken rules successfully detected!
+Detected Case Errors for 17-00:
+  [X] V3: road_no not consecutive from 0
+  [X] V4: Network not connected before closures (7/8 reachable)
+  [X] V7: Study 1 avg deg 2.00 not in [2.2, 3.2]
+
+--------------------------------------------------------------------------------
+TEST CASE 5: caseA_broken_V5_corrupted_claim.xlsx
+--------------------------------------------------------------------------------
+Result: REJECTED (FAIL) - Broken rules successfully detected!
+Detected Case Errors for 17-00:
+  [X] V5: Claim cargo_opt 99999 != true 180
+
+--------------------------------------------------------------------------------
+TEST CASE 6: caseB_broken_V2_invalid_penalty.xlsx
+--------------------------------------------------------------------------------
+Result: REJECTED (FAIL) - Broken rules successfully detected!
+Detected Case Errors for 17-01:
+  [X] V2: Location 1 penalty 5 not in {0, 1, 2, 4, 6}
+
+--------------------------------------------------------------------------------
+TEST CASE 7: caseB_broken_V3_nonconsecutive_crate_id.xlsx
+--------------------------------------------------------------------------------
+Result: REJECTED (FAIL) - Broken rules successfully detected!
+Detected Case Errors for 17-01:
+  [X] V3: crate_id not consecutive from 1
+
+--------------------------------------------------------------------------------
+TEST CASE 8: caseB_broken_V4_overlapping_waves.xlsx
+--------------------------------------------------------------------------------
+Result: REJECTED (FAIL) - Broken rules successfully detected!
+Detected Case Errors for 17-01:
+  [X] V4: Road 13 appears in multiple waves (1 and 2)
+
+--------------------------------------------------------------------------------
+TEST CASE 9: caseB_broken_V6_invalid_vertex_cover.xlsx
+--------------------------------------------------------------------------------
+Result: REJECTED (FAIL) - Broken rules successfully detected!
+Detected Case Errors for 17-01:
+  [X] V2: Sensor cover k 1 not in [2, 6]
+  [X] V6: Edge (1, 2) not covered by planted cover
+  [X] V6: Edge (1, 3) not covered by planted cover
+  [X] V6: Edge (1, 4) not covered by planted cover
+  [X] V6: Edge (1, 8) not covered by planted cover
+  [X] V6: Edge (2, 4) not covered by planted cover
+  [X] V6: Edge (2, 7) not covered by planted cover
+  [X] V6: Edge (2, 10) not covered by planted cover
+  [X] V6: Edge (4, 6) not covered by planted cover
+  [X] V6: Edge (4, 7) not covered by planted cover
+  [X] V6: Edge (4, 9) not covered by planted cover
+  [X] V6: Edge (5, 10) not covered by planted cover
+  [X] V6: Edge (6, 7) not covered by planted cover
+  [X] V6: Edge (7, 10) not covered by planted cover
+  [X] V6: Edge (7, 11) not covered by planted cover
+  [X] V6: Edge (9, 10) not covered by planted cover
+  [X] V6: Edge (10, 11) not covered by planted cover
+
+--------------------------------------------------------------------------------
+TEST CASE 10: caseB_broken_V7_signature_priority.xlsx
+--------------------------------------------------------------------------------
+Result: REJECTED (FAIL) - Broken rules successfully detected!
+Detected Case Errors for 17-01:
+  [X] V7: Study 2 mean priority 1.00 < 6.0
+
+================================================================================
+END OF VALIDATION REPORT
+================================================================================
